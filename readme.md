@@ -1,4 +1,6 @@
-In this documentation-
+## Python Docs
+
+### Content
 1. Lists
 2. Arrays
 3. Stacks and Queues
