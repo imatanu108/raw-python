@@ -366,3 +366,142 @@ print(is_empty)  # Output: False
   - Can be implemented using lists or `collections.deque`.
 
 Using `collections.deque` is generally preferred for both stacks and queues due to its optimized performance for append and pop operations from both ends.
+
+
+### Searching and Sorting Algorithms in Python
+
+#### Searching Algorithms
+
+**1. Linear Search**
+
+Linear search is a straightforward algorithm that checks each element in the list sequentially until the desired element is found or the list ends.
+
+- **Time Complexity**: O(n)
+- **Usage**: Useful for small lists or unsorted data.
+
+**Implementation**:
+```python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+
+# Example
+arr = [2, 4, 6, 8, 10]
+target = 6
+print(linear_search(arr, target))  # Output: 2
+```
+
+**2. Binary Search**
+
+Binary search is an efficient algorithm that works on sorted lists by repeatedly dividing the search interval in half.
+
+- **Time Complexity**: O(log n)
+- **Usage**: Useful for large, sorted lists.
+
+**Implementation**:
+```python
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+
+# Example
+arr = [2, 4, 6, 8, 10]
+target = 6
+print(binary_search(arr, target))  # Output: 2
+```
+
+#### Sorting Algorithms
+
+**1. Bubble Sort**
+
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
+
+- **Time Complexity**: O(n^2)
+- **Usage**: Educational purposes, not efficient for large lists.
+
+**Implementation**:
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+# Example
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr)
+print(arr)  # Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+**2. Selection Sort**
+
+Selection sort divides the input list into two parts: a sorted sublist of items which is built up from left to right and a sublist of the remaining unsorted items. It repeatedly selects the smallest (or largest) element from the unsorted sublist and moves it to the sorted sublist.
+
+- **Time Complexity**: O(n^2)
+- **Usage**: Simple but inefficient for large lists.
+
+**Implementation**:
+```python
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+# Example
+arr = [64, 25, 12, 22, 11]
+selection_sort(arr)
+print(arr)  # Output: [11, 12, 22, 25, 64]
+```
+
+**3. Insertion Sort**
+
+Insertion sort builds the final sorted list one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+- **Time Complexity**: O(n^2)
+- **Usage**: Efficient for small data sets and nearly sorted data.
+
+**Implementation**:
+```python
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+# Example
+arr = [12, 11, 13, 5, 6]
+insertion_sort(arr)
+print(arr)  # Output: [5, 6, 11, 12, 13]
+```
+
+#### Summary
+
+- **Linear Search**: Simple, works on unsorted lists, but inefficient for large lists.
+- **Binary Search**: Efficient for large, sorted lists, with a logarithmic time complexity.
+- **Bubble Sort**: Simple but inefficient for large lists, with quadratic time complexity.
+- **Selection Sort**: Simple, inefficient for large lists, with quadratic time complexity.
+- **Insertion Sort**: Efficient for small or nearly sorted data sets, with quadratic time complexity.
+
+Understanding these basic algorithms provides a foundation for learning more advanced data structures and algorithms.
+
