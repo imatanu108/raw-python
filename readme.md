@@ -4,6 +4,7 @@
 1. Lists
 2. Arrays
 3. Stacks and Queues
+4. Searching and Sorting Algorithms
 
 ### Python Lists
 
