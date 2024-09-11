@@ -1,6 +1,7 @@
 # Write a program to find factors of a given number.
 
-n = int(input("Enter the first number: "))
+print("Factors of a Number")
+n = int(input("Enter the number: "))
 
 factors = []
 

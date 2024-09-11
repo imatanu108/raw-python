@@ -1,5 +1,7 @@
 # Write a program to generate Fibonacci Series.
 
+print("Fibonacci Series")
+
 def fibonacci(n):
     sequence = []
     a, b = 0, 1
@@ -8,5 +10,5 @@ def fibonacci(n):
         a, b = b, a + b
     return sequence
 
-num_terms = int(input("Enter the length(n) of the series: "))
+num_terms = int(input("Enter the number of terms: "))
 print(fibonacci(num_terms))

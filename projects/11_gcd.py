@@ -1,5 +1,7 @@
 # Write a program to calculate the gcd of two given integers
 
+print("GCD of two numbers")
+
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b

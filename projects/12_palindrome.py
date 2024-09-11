@@ -1,8 +1,8 @@
 # Write a program that takes an integer input and checks if itis Palindrome or not.
-
+print("Palindrome Number Detector")
 num = int(input("Enter the number: "))
 
-real_num = num
+temp_num = num
 rev_num = 0
 
 while num > 0:
@@ -10,7 +10,7 @@ while num > 0:
     num = num // 10
     rev_num = rev_num * 10 + rem
 
-if (real_num == rev_num):
-    print(real_num, "is Palindrome.")
+if (temp_num == rev_num):
+    print(temp_num, "is Palindrome.")
 else:
-    print(real_num, "is not Palindrome.")
+    print(temp_num, "is not Palindrome.")

@@ -11,7 +11,10 @@ def bubble_sort(arr):
         if not swapped:
             break
 
-# Example usage
-list = [5, 2, 4, 3]
+input_nums = input('Enter numbers separated by spaces: ')
+list = input_nums.split(" ")
+list = [int(x) for x in list]
+
+print("Unsorted array is", list)
 bubble_sort(list)
 print("Sorted array is:", list)

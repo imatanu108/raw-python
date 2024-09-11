@@ -1,7 +1,10 @@
 # Write a program to calculate factorial of a number
+print("Factorial of a Number")
 
 def factorial(n):
-    if n == 0:
+    if n < 0:
+        print("Factorial does not exist")
+    elif n == 0:
         return 1
     else:
         return n * factorial(n - 1)

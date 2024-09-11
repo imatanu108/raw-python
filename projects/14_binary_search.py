@@ -1,4 +1,5 @@
 # Write a program to implement binary search on a list
+print("Binary Search")
 
 def binary_search(arr, target):
     low = 0
@@ -15,7 +16,14 @@ def binary_search(arr, target):
 
     return -1
 
-# Example
-arr = [2, 4, 6, 8, 10]
-target = 6
-print(binary_search(arr, target))  # Output: 2
+input_nums = input('Enter numbers separated by spaces : ')
+arr = input_nums.split(" ")
+arr = [int(x) for x in arr]
+
+target = int(input("Enter a target: "))
+result = binary_search(arr, target)
+print(result)
+if result == -1:
+    print("Number is not available in the list.")
+else:
+    print(f'{target} is found at index {result}.')
