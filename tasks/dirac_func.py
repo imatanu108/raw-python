@@ -20,3 +20,24 @@ integral_values = [compute_integral(sigma) for sigma in sigma_values]
 # Print the results
 for sigma, integral_value in zip(sigma_values, integral_values):
     print(f"Integral for sigma = {sigma}: {integral_value}")
+
+
+
+
+x_values = np.linspace(-5, 10, 500)
+
+# Plot the integrand for each sigma
+plt.figure(figsize=(10, 6))
+for sigma in sigma_values:
+    y_values = integrand(x_values, sigma)
+    plt.plot(x_values, y_values, label=f'sigma = {sigma}')
+
+# Add titles and labels
+plt.title('Integrand Function for Different Sigma Values')
+plt.xlabel('x')
+plt.ylabel('f(x, sigma)')
+plt.legend()
+plt.grid(True)
+
+# Show the plot
+plt.show()
