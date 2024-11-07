@@ -7,11 +7,6 @@ string = input("Enter the string: ")
 def is_palindrome(string):
     return string == string[::-1]
 
-# rev_string = string[::-1]
-
-# for i in range(len(string)):
-#     rev_string = string[i] + rev_string
-
 if is_palindrome(string):
     print("It is Palindrome.")
 else:
